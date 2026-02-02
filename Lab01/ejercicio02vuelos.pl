@@ -18,7 +18,10 @@ vuelo(medellin, barranquilla).
 vuelo(pasto, bogota).
 vuelo(bogota, pasto).
 
-% 1. vuelo(bogota, medellin). true
-% 2. vuelo(bogota, X). medellin, cartagena y pasto
-% 3. vuelo(X, medellin). bogota
-% 4. vuelo(X, cali). false
+escala(X, Y):- vuelo(X, V), vuelo(V, Y).
+% 1. escala(bogota, barranquilla). true
+% 2. escala(cali. X). medellin, cartagena y pasto
+viaje(X, Y):- escala(X, Y) ; vuelo(X,Y).
+% 3. viaje(bogota, pasto). true
+destinos(X, Y):- viaje(X, Y). 
+% 4. destinos(bogota, X)cartagena, barranquilla, bogota, medellin, cartagena y pasto
