@@ -22,3 +22,4 @@ vuelo(bogota, pasto).
 % 2. vuelo(bogota, X). medellin, cartagena y pasto
 % 3. vuelo(X, medellin). bogota
 % 4. vuelo(X, cali). false
+% acabado
